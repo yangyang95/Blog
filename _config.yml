@@ -89,5 +89,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-admin
+  - jekyll-sitemap
+  - jemoji
 
 exclude:            [vendor]
