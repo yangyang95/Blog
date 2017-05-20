@@ -26,6 +26,9 @@ layout: default
 
   {{ content }}
 
+  <!-- share links -->
+  {% include share-links.html %}
+
   <!-- Disqus -->
   {% if page.comments != false and site.disqus.id %}
   <div class="post-disqus">
