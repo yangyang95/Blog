@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msvalidate.01" content="7804C9A97D8D42178C32C4B2E11A418E" />
+  <title>利用 Electron 建立跨平台的桌面程式 | yang yang's Blog | 技術隨筆部落格</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/Blog/assets/css/main.css" type="text/css">
+
+  <!-- Font -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed for yang yang's Blog | 技術隨筆部落格" href="/Blog/feed.xml" />
+
+  <!-- Begin Jekyll SEO tag v2.2.3 -->
+<title>利用 Electron 建立跨平台的桌面程式 | yang yang’s Blog 技術隨筆部落格</title>
+<meta property="og:title" content="利用 Electron 建立跨平台的桌面程式" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Creste multi-platform application with electron" />
+<meta property="og:description" content="Creste multi-platform application with electron" />
+<link rel="canonical" href="http://localhost:4000/Blog/2017-07-10/electron/" />
+<meta property="og:url" content="http://localhost:4000/Blog/2017-07-10/electron/" />
+<meta property="og:site_name" content="yang yang’s Blog 技術隨筆部落格" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-10T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"利用 Electron 建立跨平台的桌面程式","author":{"@type":"Person","name":null},"datePublished":"2017-07-10T00:00:00+08:00","dateModified":"2017-07-10T00:00:00+08:00","description":"Creste multi-platform application with electron","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Blog/2017-07-10/electron/"},"url":"http://localhost:4000/Blog/2017-07-10/electron/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- Google Analytics -->
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+<body>
+  <div class="content-container">
+    <header>
+  <div class="header-small">
+    <a href="http://localhost:4000/Blog">yang yang's Blog | 技術隨筆部落格</a>
+  </div>
+</header>
+<div class="post">
+  <div class="post-title">利用 Electron 建立跨平台的桌面程式</div>
+  <span class="post-date">
+    <time>10 Jul 2017</time>
+  </span>
+  <div class="post-tag">
+    <ul>
+      
+      <li>
+        <a href="http://localhost:4000/Blog/tags#electron">
+          <span>electron</span>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="http://localhost:4000/Blog/tags#Node.js">
+          <span>Node.js</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+
+  <p>Electron (前身是 Atom shell) 是 Github 開發的專案，基於 Node.js 跟 Chromium 來作為桌面的應用程式開發。因為是使用網路技術的根基，所以可以用寫網頁的方式，也就是 HTML、CSS、JS，來撰寫跨平台的桌面程式，不論是 Windows, mac, 還是 linux 皆可以使用。</p>
+
+<p>來看看官方的介紹影片</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8YP_nOCO-4Q" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>有許多好用的工具也是使用 electron 開發的，著名的有 VS Code, slack, Atom…等等</p>
+
+<style>
+.inline_img {
+	display: inline-block;
+	width: 160px;
+	margin-right: 50px;
+}
+
+.inline_img > p {
+	text-align: center;
+}
+</style>
+
+<div>
+	<div class="inline_img">
+		<img src="https://electron.atom.io/images/apps/visual-studio-code-icon.png" />
+		<p>Visual Studio Code</p>
+	</div>
+	<div class="inline_img">
+		<img src="https://electron.atom.io/images/apps/slack-icon.png" />
+		<p>Slack</p>
+	</div>
+	<div class="inline_img">
+		<img src="https://electron.atom.io/images/apps/atom-icon.png" />
+		<p>Atom</p>
+	</div>
+</div>
+
+<p><br />
+更神奇的是可以配合其他的框架(framwork)、套件(plugin)來進行開發，像是可以用 bootstrap 來打造應用程式的 GUI 界面。</p>
+
+<p>也支援系統原生的選單(Menu)、系統匣(System Tray)、嵌入網頁(embeded)、麥克風跟攝影鏡頭的使用，還可以自訂或套用系統預設的快捷鍵。真的是相當好用的工具。</p>
+
+<p>可以在網路上找到相當完整的教學 - <a href="https://www.tutorialspoint.com/electron/index.htm">Electron Tutorial</a></p>
+
+<p>這邊也附上相關的補充資料(雖然是有點時間的資料，但還是有參考價值) - <a href="https://speakerdeck.com/dannvix/electron-x-react-qian-duan-kai-fa-zhe-gao-su-kua-jie-zhuo-mian-kai-fa">Electron × React — 前端開發者高速跨界桌面開發</a></p>
+
+<p>這篇到這裡，有空的話，我再來寫相關的教學囉~~</p>
+
+
+  <!-- share links -->
+  <!-- Reference: http://mycyberuniverse.com/web/social-media-share-bar-jekyll-blog-website.html -->
+
+<div id="share-bar">
+	<h4>Share this:</h4>
+
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Blog/2017-07-10/electron/"
+	        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+	        title="Share on Facebook" >
+	        <i class="fa fa-facebook-official share-button"> facebook</i>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=利用 Electron 建立跨平台的桌面程式&url=http://localhost:4000/Blog/2017-07-10/electron/"
+	        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+	        title="Share on Twitter" >
+	        <i class="fa fa-twitter share-button"> twitter</i>
+	    </a>
+
+	    <a  href="https://plus.google.com/share?url=http://localhost:4000/Blog/2017-07-10/electron/"
+	        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+	        title="Share on Google+" >
+	        <i class="fa fa-google-plus share-button"> google</i>
+	    </a>
+	</div>
+
+</div>
+
+  <!-- Disqus -->
+  
+  <div class="post-disqus">
+      <section id="disqus_thread"></section>
+      <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//yangyangweng.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+
+</div>
+
+
+    <!-- Documents about icons are here: http://fontawesome.io/icons/ -->
+<div class="footer">
+  <hr />
+  <div class="footer-link">
+
+    
+
+	
+
+	
+
+    
+
+    
+    <a href="https://github.com/yangyang95"><i class="fa fa-github" aria-hidden="true"></i></a>
+    
+
+	
+
+	
+
+    
+
+	
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+    <a href="mailto:yangyang.weng@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    
+
+  </div>
+  © 2017 Jerry Weng. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>

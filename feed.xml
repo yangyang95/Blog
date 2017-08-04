@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>yang yang's Blog | 技術隨筆部落格</title>
+    <link>http://localhost:4000/Blog</link>
+    <atom:link href="http://localhost:4000/Blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>利用 Electron 建立跨平台的桌面程式</title>
+        <description>&lt;p&gt;Electron (前身是 Atom shell) 是 Github 開發的專案，基於 Node.js 跟 Chromium 來作為桌面的應用程式開發。因為是使用網路技術的根基，所以可以用寫網頁的方式，也就是 HTML、CSS、JS，來撰寫跨平台的桌面程式，不論是 Windows, mac, 還是 linux 皆可以使用。&lt;/p&gt;
+
+&lt;p&gt;來看看官方的介紹影片&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/8YP_nOCO-4Q&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;有許多好用的工具也是使用 electron 開發的，著名的有 VS Code, slack, Atom…等等&lt;/p&gt;
+
+&lt;style&gt;
+.inline_img {
+	display: inline-block;
+	width: 160px;
+	margin-right: 50px;
+}
+
+.inline_img &gt; p {
+	text-align: center;
+}
+&lt;/style&gt;
+
+&lt;div&gt;
+	&lt;div class=&quot;inline_img&quot;&gt;
+		&lt;img src=&quot;https://electron.atom.io/images/apps/visual-studio-code-icon.png&quot; /&gt;
+		&lt;p&gt;Visual Studio Code&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;inline_img&quot;&gt;
+		&lt;img src=&quot;https://electron.atom.io/images/apps/slack-icon.png&quot; /&gt;
+		&lt;p&gt;Slack&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;inline_img&quot;&gt;
+		&lt;img src=&quot;https://electron.atom.io/images/apps/atom-icon.png&quot; /&gt;
+		&lt;p&gt;Atom&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+更神奇的是可以配合其他的框架(framwork)、套件(plugin)來進行開發，像是可以用 bootstrap 來打造應用程式的 GUI 界面。&lt;/p&gt;
+
+&lt;p&gt;也支援系統原生的選單(Menu)、系統匣(System Tray)、嵌入網頁(embeded)、麥克風跟攝影鏡頭的使用，還可以自訂或套用系統預設的快捷鍵。真的是相當好用的工具。&lt;/p&gt;
+
+&lt;p&gt;可以在網路上找到相當完整的教學 - &lt;a href=&quot;https://www.tutorialspoint.com/electron/index.htm&quot;&gt;Electron Tutorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這邊也附上相關的補充資料(雖然是有點時間的資料，但還是有參考價值) - &lt;a href=&quot;https://speakerdeck.com/dannvix/electron-x-react-qian-duan-kai-fa-zhe-gao-su-kua-jie-zhuo-mian-kai-fa&quot;&gt;Electron × React — 前端開發者高速跨界桌面開發&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這篇到這裡，有空的話，我再來寫相關的教學囉~~&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Jul 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Blog/2017-07-10/electron/</link>
+        <guid isPermaLink="true">http://localhost:4000/Blog/2017-07-10/electron/</guid>
+      </item>
+    
+      <item>
+        <title>在 Jekyll 部落格中加入社交媒體分享功能</title>
+        <description>&lt;h3 id=&quot;1-加入-font-awesome-字體&quot;&gt;1. 加入 font awesome 字體&lt;/h3&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_include&lt;/code&gt; 目錄的 &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; 中加入字體&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-建立-social-linkshtml&quot;&gt;2. 建立 social-links.html&lt;/h3&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; 目錄下建立 &lt;code class=&quot;highlighter-rouge&quot;&gt;soical-links.html&lt;/code&gt; 用來存放社交按鈕的 html code &lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;share-bar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Share this:&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;share-buttons&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+	    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- facebook --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}&quot;&lt;/span&gt;
+	        &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+		return false;&quot;&lt;/span&gt;
+	        &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Share on Facebook&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	        &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-facebook-official share-button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; facebook&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+
+	    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- twitter --&amp;gt;&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://twitter.com/intent/tweet?text={{ page.title }}&amp;amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}&quot;&lt;/span&gt;
+	        &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+		return false;&quot;&lt;/span&gt;
+	        &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Share on Twitter&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	        &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-twitter share-button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; twitter&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+
+	   &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- google+ --&amp;gt;&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://plus.google.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&quot;&lt;/span&gt;
+	        &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+		return false;&quot;&lt;/span&gt;
+	        &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Share on Google+&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	        &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-google-plus share-button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+	    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果需要更多的按鈕可以到這裡查詢&lt;br /&gt;&lt;a href=&quot;http://mycyberuniverse.com/web/social-media-share-bar-jekyll-blog-website.html&quot;&gt;http://mycyberuniverse.com/web/social-media-share-bar-jekyll-blog-website.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-自訂按鈕樣式&quot;&gt;3. 自訂按鈕樣式&lt;/h3&gt;
+
+&lt;p&gt;使用 sass 對按鈕的樣式進行調整 (使用 css 也可以)&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sass highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Share Bar */
+&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;#share-bar&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;16px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/* Title */
+&lt;/span&gt;    &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* All buttons */
+&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.share-buttons&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* Each button */
+&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.share-button&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#D3D6D2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#f2e8f1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ffffff&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-在文章頁面引入按鈕&quot;&gt;4. 在文章頁面引入按鈕&lt;/h3&gt;
+&lt;p&gt;接着在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; 目錄的 &lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt; 內引入剛剛建立的 &lt;code class=&quot;highlighter-rouge&quot;&gt;social-links.html&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;share-links.html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 01 Jun 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Blog/2017-06-01/jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/Blog/2017-06-01/jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>自定義 Jekyll 的 404 頁面</title>
+        <description>&lt;p&gt;如果把部落格放在 Github 上面，使用者存取到不存在的頁面時，會被導向到 github 本身的 404頁&lt;br /&gt;
+透過 Jekyll 我們可以很輕易的自訂 404 的頁面的樣式。&lt;/p&gt;
+
+&lt;p&gt;只要在根目錄下加入&lt;code class=&quot;highlighter-rouge&quot;&gt;404.md&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt;，並且設定&lt;code class=&quot;highlighter-rouge&quot;&gt;permalink: /404.html&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;以下使用最簡單的 404 頁面來當做範例&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: default
+permalink: /404.html
+---
+
+# 404 error
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如此一來即可產生相當簡單的 404 頁面
+&lt;img src=&quot;/Blog/assets/images/404_error.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最後，說這麼多，其實只是想給大家看看我做的 &lt;a href=&quot;/Blog/404&quot;&gt;404 頁面&lt;/a&gt; 而已 XD&lt;/p&gt;
+</description>
+        <pubDate>Mon, 29 May 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Blog/2017-05-29/jekyll-404/</link>
+        <guid isPermaLink="true">http://localhost:4000/Blog/2017-05-29/jekyll-404/</guid>
+      </item>
+    
+      <item>
+        <title>Git 使用心得 - git stash</title>
+        <description>&lt;h2 id=&quot;指令介紹&quot;&gt;指令介紹&lt;/h2&gt;
+&lt;p&gt;最近使用 git 的時候學習到一個好用的功能 &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git stash&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;所謂的 stash 就是儲藏的意思，主要的用處就是在 &lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;checkout&lt;/code&gt; 之前，
+如果有尚未完成的工作都可以先執行 stash ，將工作存起來再執行。&lt;/p&gt;
+
+&lt;p&gt;這功能在與他人共同協作的時候特別有用。以下舉例來說明：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git status
+&lt;span class=&quot;c&quot;&gt;# On branch master&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Changes to be committed:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#      modified:   main.c&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Changes not staged for commit:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#   (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#      modified:   matrix.h&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以看到 main.c 已經 stage，然後 matrix.h 還沒有。執行 &lt;strong&gt;commit&lt;/strong&gt; 後，&lt;br /&gt;
+如果需要進行 &lt;strong&gt;push&lt;/strong&gt;，就勢必需要將還沒 commit 的檔案先 &lt;strong&gt;stash&lt;/strong&gt; 起來。&lt;/p&gt;
+
+&lt;p&gt;可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git stash list&lt;/code&gt; 來查看被儲存起來的東西&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git stash list
+stash@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;: WIP on master: 049d078 added the index file
+stash@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;: WIP on master: c264051 Revert &lt;span class=&quot;s2&quot;&gt;&quot;added file_size&quot;&lt;/span&gt;
+stash@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;: WIP on master: 21d80a5 added number to log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;完成更改後，重新把存起來的更改抓回來用 &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git stash apply&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;小結&quot;&gt;小結&lt;/h2&gt;
+&lt;p&gt;我使用到的指令：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git stash&lt;/code&gt; - 儲存更改&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git stash list&lt;/code&gt; - 列出儲存&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git stash apply&lt;/code&gt; - 抓回儲存&lt;br /&gt;
+目前這三個就很足夠我使用了&lt;/p&gt;
+
+&lt;p&gt;其他的指令可以在參考連結查看&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E5%84%B2%E8%97%8F-Stashing&quot;&gt;Git 工具 - 儲藏 (Stashing)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://backlogtool.com/git-guide/tw/reference/stash.html&quot;&gt;Stash（暫存）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.wu-boy.com/2013/08/git-rebase-stash-tip/&quot;&gt;Git rebase + stash 小技巧&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 19 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Blog/2017-04-19/git-git-stash/</link>
+        <guid isPermaLink="true">http://localhost:4000/Blog/2017-04-19/git-git-stash/</guid>
+      </item>
+    
+      <item>
+        <title>部落格開張</title>
+        <description>&lt;p&gt;新部落格今天開站，大家請多指教 :sunglasses:&lt;br /&gt;
+準備把一些技術隨筆放在這個站上，不定期更新
+&lt;br /&gt;&lt;br /&gt;
+我會盡量督促自己多寫點文章 (o'_'o)&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Blog/2017-04-12/first-post/</link>
+        <guid isPermaLink="true">http://localhost:4000/Blog/2017-04-12/first-post/</guid>
+      </item>
+    
+  </channel>
+</rss>
