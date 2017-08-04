@@ -92,5 +92,6 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-watch
+  - jekyll-paginate
 
 exclude:            [vendor]
