@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>yang yang's Blog | 技術隨筆部落格</title>
-    <link>http://localhost:4000/Blog</link>
-    <atom:link href="http://localhost:4000/Blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://yangyang95.github.io/Blog</link>
+    <atom:link href="https://yangyang95.github.io/Blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>用 C 與 Gnuplot 來建立 gif 動畫</title>
@@ -31,8 +31,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 04 Aug 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/</link>
-        <guid isPermaLink="true">http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/</guid>
+        <link>https://yangyang95.github.io/Blog/2017-08-04/c-gnuplot-gif/</link>
+        <guid isPermaLink="true">https://yangyang95.github.io/Blog/2017-08-04/c-gnuplot-gif/</guid>
       </item>
     
       <item>
@@ -84,8 +84,8 @@
 &lt;p&gt;這篇到這裡，有空的話，我再來寫相關的教學囉~~&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Jul 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Blog/2017-07-10/electron/</link>
-        <guid isPermaLink="true">http://localhost:4000/Blog/2017-07-10/electron/</guid>
+        <link>https://yangyang95.github.io/Blog/2017-07-10/electron/</link>
+        <guid isPermaLink="true">https://yangyang95.github.io/Blog/2017-07-10/electron/</guid>
       </item>
     
       <item>
@@ -192,8 +192,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 01 Jun 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Blog/2017-06-01/jekyll/</link>
-        <guid isPermaLink="true">http://localhost:4000/Blog/2017-06-01/jekyll/</guid>
+        <link>https://yangyang95.github.io/Blog/2017-06-01/jekyll/</link>
+        <guid isPermaLink="true">https://yangyang95.github.io/Blog/2017-06-01/jekyll/</guid>
       </item>
     
       <item>
@@ -219,8 +219,8 @@ permalink: /404.html
 &lt;p&gt;最後，說這麼多，其實只是想給大家看看我做的 &lt;a href=&quot;/Blog/404&quot;&gt;404 頁面&lt;/a&gt; 而已 XD&lt;/p&gt;
 </description>
         <pubDate>Mon, 29 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Blog/2017-05-29/jekyll-404/</link>
-        <guid isPermaLink="true">http://localhost:4000/Blog/2017-05-29/jekyll-404/</guid>
+        <link>https://yangyang95.github.io/Blog/2017-05-29/jekyll-404/</link>
+        <guid isPermaLink="true">https://yangyang95.github.io/Blog/2017-05-29/jekyll-404/</guid>
       </item>
     
       <item>
@@ -275,8 +275,8 @@ stash@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;o&quot
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 19 Apr 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Blog/2017-04-19/git-git-stash/</link>
-        <guid isPermaLink="true">http://localhost:4000/Blog/2017-04-19/git-git-stash/</guid>
+        <link>https://yangyang95.github.io/Blog/2017-04-19/git-git-stash/</link>
+        <guid isPermaLink="true">https://yangyang95.github.io/Blog/2017-04-19/git-git-stash/</guid>
       </item>
     
       <item>
@@ -287,8 +287,8 @@ stash@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;o&quot
 我會盡量督促自己多寫點文章 (o'_'o)&lt;/p&gt;
 </description>
         <pubDate>Wed, 12 Apr 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Blog/2017-04-12/first-post/</link>
-        <guid isPermaLink="true">http://localhost:4000/Blog/2017-04-12/first-post/</guid>
+        <link>https://yangyang95.github.io/Blog/2017-04-12/first-post/</link>
+        <guid isPermaLink="true">https://yangyang95.github.io/Blog/2017-04-12/first-post/</guid>
       </item>
     
   </channel>
