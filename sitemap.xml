@@ -21,6 +21,10 @@
 <lastmod>2017-07-10T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/</loc>
+<lastmod>2017-08-04T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/Blog/about/</loc>
 </url>
 <url>
@@ -31,6 +35,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/Blog/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Blog/page2/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/Blog/google3dc3d2cfa03aa2a6.html</loc>

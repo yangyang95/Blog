@@ -6,6 +6,36 @@
     <atom:link href="http://localhost:4000/Blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>用 C 與 Gnuplot 來建立 gif 動畫</title>
+        <description>&lt;p&gt;最近正在讀電機機械基本原理 (Electric Machinery Fundamentals, 4th Edition, Stephen J. Chapman)，看到裡面的 matlab code 就會手癢用 C 改寫看看&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;昨天，做到一個例題的程式碼是要把馬達中的磁場分布用動畫做呈現&lt;br /&gt;
+這個用 matlab 可以簡單做到，不過用 C 就沒有那麼簡單，過程中困擾了好久XD&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;因此在這邊把這個小技巧做個記錄，這個範例會使用到 C 的複數函式庫、popen 函式、sprintf 做格式化，還有 gnuplot 做動畫的技巧。
+相當的有趣，做完有種功力大增的感覺 :sunglasses:&lt;/p&gt;
+
+&lt;p&gt;廢話不多說，趕快來看結果跟程式碼&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/yangyang95/461e388ca10cb2c9776bea26de229431.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;基本來說，最主要的概念是使用一個 gnuplot 的 script 並不容易產生動畫，因此利用 C 語言來為我們產生 plot script 並執行。再把得到的每一張圖用 ImageMagick 來合成 gif 動畫。&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+&lt;p&gt;C 的複數函式庫、popen 函式，還有 sprintf 做格式化的參考資料就放在這邊給各位使用&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/9860772/7839373&quot;&gt;How to work with complex numbers in C?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://man7.org/linux/man-pages/man3/popen.3.html&quot;&gt;POPEN(3) Linux Programmer’s Manual&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ccckmit.wikidot.com/cp:sprintf&quot;&gt;C 語言中的 sprintf() 函數&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 04 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/</link>
+        <guid isPermaLink="true">http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/</guid>
+      </item>
+    
+      <item>
         <title>利用 Electron 建立跨平台的桌面程式</title>
         <description>&lt;p&gt;Electron (前身是 Atom shell) 是 Github 開發的專案，基於 Node.js 跟 Chromium 來作為桌面的應用程式開發。因為是使用網路技術的根基，所以可以用寫網頁的方式，也就是 HTML、CSS、JS，來撰寫跨平台的桌面程式，不論是 Windows, mac, 還是 linux 皆可以使用。&lt;/p&gt;
 

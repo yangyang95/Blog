@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msvalidate.01" content="7804C9A97D8D42178C32C4B2E11A418E">
+  <title>用 C 與 Gnuplot 來建立 gif 動畫 | yang yang's Blog | 技術隨筆部落格</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/Blog/assets/css/main.css" type="text/css">
+
+  <!-- Font -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css">
+
+
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed for yang yang's Blog | 技術隨筆部落格" href="/Blog/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.2.3 -->
+<title>用 C 與 Gnuplot 來建立 gif 動畫 | yang yang’s Blog 技術隨筆部落格</title>
+<meta property="og:title" content="用 C 與 Gnuplot 來建立 gif 動畫">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Example of creating gif with C, gnuplot and ImageMagick(optional)">
+<meta property="og:description" content="Example of creating gif with C, gnuplot and ImageMagick(optional)">
+<link rel="canonical" href="http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/">
+<meta property="og:url" content="http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/">
+<meta property="og:site_name" content="yang yang’s Blog 技術隨筆部落格">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-08-04T00:00:00+08:00">
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"用 C 與 Gnuplot 來建立 gif 動畫","author":{"@type":"Person","name":null},"datePublished":"2017-08-04T00:00:00+08:00","dateModified":"2017-08-04T00:00:00+08:00","description":"Example of creating gif with C, gnuplot and ImageMagick(optional)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/"},"url":"http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- Google Analytics -->
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+<body>
+  <div class="content-container">
+    <header>
+  <div class="header-small">
+    <a href="http://localhost:4000/Blog">yang yang's Blog | 技術隨筆部落格</a>
+  </div>
+</header>
+<div class="post">
+  <div class="post-title">用 C 與 Gnuplot 來建立 gif 動畫</div>
+  <span class="post-date">
+    <time>04 Aug 2017</time>
+  </span>
+  <div class="post-tag">
+    <ul>
+      
+      <li>
+        <a href="http://localhost:4000/Blog/tags#C">
+          <span>C</span>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="http://localhost:4000/Blog/tags#Gnuplot">
+          <span>Gnuplot</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+
+  <p>最近正在讀電機機械基本原理 (Electric Machinery Fundamentals, 4th Edition, Stephen J. Chapman)，看到裡面的 matlab code 就會手癢用 C 改寫看看<br></p>
+
+<p>昨天，做到一個例題的程式碼是要把馬達中的磁場分布用動畫做呈現<br>
+這個用 matlab 可以簡單做到，不過用 C 就沒有那麼簡單，過程中困擾了好久XD<br></p>
+
+<p>因此在這邊把這個小技巧做個記錄，這個範例會使用到 C 的複數函式庫、popen 函式、sprintf 做格式化，還有 gnuplot 做動畫的技巧。
+相當的有趣，做完有種功力大增的感覺 <img class="emoji" title=":sunglasses:" alt=":sunglasses:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png" height="20" width="20" align="absmiddle"></p>
+
+<p>廢話不多說，趕快來看結果跟程式碼</p>
+
+<script src="https://gist.github.com/yangyang95/461e388ca10cb2c9776bea26de229431.js"></script>
+
+<p>基本來說，最主要的概念是使用一個 gnuplot 的 script 並不容易產生動畫，因此利用 C 語言來為我們產生 plot script 並執行。再把得到的每一張圖用 ImageMagick 來合成 gif 動畫。</p>
+
+<h3 id="references">References</h3>
+<p>C 的複數函式庫、popen 函式，還有 sprintf 做格式化的參考資料就放在這邊給各位使用<br></p>
+
+<ul>
+  <li><a href="https://stackoverflow.com/a/9860772/7839373">How to work with complex numbers in C?</a></li>
+  <li><a href="http://man7.org/linux/man-pages/man3/popen.3.html">POPEN(3) Linux Programmer’s Manual</a></li>
+  <li><a href="http://ccckmit.wikidot.com/cp:sprintf">C 語言中的 sprintf() 函數</a></li>
+</ul>
+
+
+  <!-- share links -->
+  <!-- Reference: http://mycyberuniverse.com/web/social-media-share-bar-jekyll-blog-website.html -->
+
+<div id="share-bar">
+	<h4>Share this:</h4>
+
+	<div class="share-buttons">
+	    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+	        <i class="fa fa-facebook-official share-button"> facebook</i>
+	    </a>
+
+	    <a href="https://twitter.com/intent/tweet?text=%E7%94%A8%20C%20%E8%88%87%20Gnuplot%20%E4%BE%86%E5%BB%BA%E7%AB%8B%20gif%20%E5%8B%95%E7%95%AB&amp;url=http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter">
+	        <i class="fa fa-twitter share-button"> twitter</i>
+	    </a>
+
+	    <a href="https://plus.google.com/share?url=http://localhost:4000/Blog/2017-08-04/c-gnuplot-gif/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google+">
+	        <i class="fa fa-google-plus share-button"> google</i>
+	    </a>
+	</div>
+
+</div>
+
+  <!-- Disqus -->
+  
+  <div class="post-disqus">
+      <section id="disqus_thread"></section>
+      <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//yangyangweng.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+  </div>
+  
+
+</div>
+
+
+    <!-- Documents about icons are here: http://fontawesome.io/icons/ -->
+<div class="footer">
+  <hr>
+  <div class="footer-link">
+
+    
+
+	
+
+	
+
+    
+
+    
+    <a href="https://github.com/yangyang95"><i class="fa fa-github" aria-hidden="true"></i></a>
+    
+
+	
+
+	
+
+    
+
+	
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+    <a href="mailto:yangyang.weng@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    
+
+  </div>
+  © 2017 Jerry Weng. All rights reserved.
+</div>
+
+  </div>
+</body>
+</html>
