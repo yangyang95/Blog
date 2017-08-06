@@ -4,6 +4,7 @@ title: "部落格開張"
 description: "First post for yangyang's blog"
 date: 2017-04-12
 tags: [intro]
+author: JerryWeng
 comments: true
 share: true
 ---

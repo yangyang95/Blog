@@ -4,6 +4,7 @@ title: "用 C 與 Gnuplot 來建立 gif 動畫"
 description: "Example of creating gif with C, gnuplot and ImageMagick(optional)"
 date: 2017-08-04
 tags: [C, Gnuplot]
+author: JerryWeng
 comments: true
 share: true
 ---

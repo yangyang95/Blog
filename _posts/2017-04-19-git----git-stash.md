@@ -4,6 +4,7 @@ title: "Git 使用心得 - git stash"
 description: "Git stash tutorial"
 date: 2017-04-19
 tags: [git]
+author: JerryWeng
 comments: true
 ---
 
