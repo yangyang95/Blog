@@ -84,6 +84,16 @@ defaults:
     values:
       layout:       "post"
 
+# jekyll-seo-tag
+title: "yang yang's Blog | 技術隨筆部落格"
+social:
+  name: Jerry Weng
+  links:
+    - https://twitter.com/weng_yangyang
+    - https://github.com/yangyang95
+webmaster_verifications:
+  bing: 7804C9A97D8D42178C32C4B2E11A418E
+
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 plugins:
   - jekyll-seo-tag
